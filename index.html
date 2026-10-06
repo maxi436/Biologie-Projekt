@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Wochenplaner Biologie</title>
+        <meta charset="UTF-8">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <nav>
+            <button onclick="show('körper')">Eigenschaften</button>
+        </nav>
+
+        <section id="start">
+            <h1>Hallo Nutzer!</h1>
+        </section>
+
+        <section id="körper">
+            <h1>Eigenschaften</h1>
+            <p>
+                Körpergewicht in kg: <input id="gew" type="number"><br>
+                Größe in cm: <input id="gro" type="number"><br>
+                Alter: <input id="alt" type="number"><br>
+                Biologisches Geschlecht:
+                <select id="ges">
+                    <option value="m">männlich</option>
+                    <option value="f">weiblich</option>
+                </select><br>
+                Diabetes:
+                <select>
+                    <option value=0>keine</option>
+                    <option value=1>Typ 1</option>
+                    <option value=2>Typ 2</option>
+                </select>
+            </p>
+        </section>
+
+        <footer>
+            von Maximilian S. und Max R.
+        </footer>
+    </body>
+    <script src="sections.js"></script>
+    <script src="script.js"></script>
+</html>
