@@ -13,6 +13,7 @@
     <body>
         <nav>
             <button onclick="show('körper')">Eigenschaften</button>
+            <button onclick="show('sport')">Aktivität</button>
             <button onclick="bedarf(); show('bedarf')">Kalorienbedarf</button>
         </nav>
 
@@ -41,12 +42,28 @@
                     <option value=2>Typ 2</option>
                 </select>
             </p>
-            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf berechnen</button>
+            <button onclick="show('sport')">Akrivität eintragen</button>
         </section>
 
         <section id="bedarf">
             <h1>Kalorienbedarf</h1>
             <p id="kalorien"></p>
+            <p id="sport"></p>
+        </section>
+
+        <section id="sport">
+            <h1>Aktivität</h1>
+            <p>
+                Gebe den aktiven Kalorienverbrauch pro Tag ein:<br>
+                Montag: <input id="sportMontag" type="number"><br>
+                Dienstag: <input id="sportDienstag" type="number"><br>
+                Mittwoch: <input id="sportMittwoch" type="number"><br>
+                Donnerstag: <input id="sportDonnerstag" type="number"><br>
+                Freitag: <input id="sportFreitag" type="number"><br>
+                Samstag: <input id="sportSamstag" type="number"><br>
+                Sonntag: <input id="sportSonntag" type="number"><br>
+            </p>
+            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf berechnen</button>
         </section>
 
         <footer>

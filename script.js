@@ -42,8 +42,21 @@ function bedarf() {
 
         kalorien = Math.round(kalorien);
 
-        document.getElementById('kalorien').textContent = `Täglicher Kalorienbedarf: ${kalorien} kcal`;
+        kal.textContent = `Täglicher Grundbedarf: ${kalorien} kcal`;
+        kal.className = "valid";
+
+        const sport = document.getElementById('sport');
+        const wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+        let bedarf = [];
+        for (const tag of wochentage) {
+            const input = document.getElementById(`sport${tag}`);
+            const wert = kalorien+parseInt(input.value) ||kalorien;
+            sport.innerHTML += `${tag}: ${wert} kcal<br>`;
+            bedarf.push(wert);
+        }
+
     } catch (error) {
-        document.getElementById('kalorien').textContent = "Fehler bei der Berechnung.";
+        kal.textContent = "Fehler bei der Berechnung.";
+        kal.className = "invalid";
     }
 }
