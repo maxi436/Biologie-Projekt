@@ -13,10 +13,12 @@
     <body>
         <nav>
             <button onclick="show('körper')">Eigenschaften</button>
+            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf</button>
         </nav>
 
         <section id="start">
             <h1>Hallo Nutzer!</h1>
+            <button onclick="show('körper')">Daten eingeben</button>
         </section>
 
         <section id="körper">
@@ -27,16 +29,24 @@
                 Alter: <input id="alt" type="number"><br>
                 Biologisches Geschlecht:
                 <select id="ges">
+                    <option selected hidden>auswählen</option>
                     <option value="m">männlich</option>
                     <option value="f">weiblich</option>
                 </select><br>
                 Diabetes:
                 <select>
+                    <option selected hidden>auswählen</option>
                     <option value=0>keine</option>
                     <option value=1>Typ 1</option>
                     <option value=2>Typ 2</option>
                 </select>
             </p>
+            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf berechnen</button>
+        </section>
+
+        <section id="bedarf">
+            <h1>Kalorienbedarf</h1>
+            <p id="kalorien"></p>
         </section>
 
         <footer>

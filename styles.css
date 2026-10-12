@@ -3,41 +3,70 @@
     color: #d2d2d2;
 }
 body {
-    background-color: #2a2a2a;
+    background-color: #1a1a1a;
 }
 nav {
     margin-bottom: 1em;
-}
-button {
-    font-size: 0.8em;
-    padding: 0.4em;
 }
 h1 {
     text-align: center;
 }
 section, button, select, input{
-    background-color: #2f2f2f;
-    border: solid 2px #3a3a3a;
+    background-color: #1f1f1f;
+    border: solid 2px #2a2a2a;
     border-radius: 10px;
+}
+section {
+    padding:1em;
+}
+input,select{
+    padding:0.2em;
+}
+button {
+    padding:0.4em;
+}
+nav button {
+    background-color: #1f1f1f;
+    border: solid 2px #2a2a2a; 
+}
+nav button:hover {
+    background-color: #2a2a2a;
+    border: solid 2px #2a2a2a;
+}
+
+section button, section input, section select {
+    background-color: #252525;
+    border: solid 2px #2f2f2f;
+}
+section button:hover, section input:hover, section select:hover {
+    background-color: #2f2f2f;
+    border: solid 2px #2f2f2f;
 }
 p {
     text-align: justify;
+    line-height: 2em;
 }
-select{
+select {
     width: 8em;
 }
 input{
-    width: 2em;
-    font-size: 0.8em;
+    width: 5em;
     text-align: center;
 }
 section {
-    padding: 0.8em;
-    font-size: 0.8em;
+    padding: 1em;
     text-align: center;
 }
 footer {
+    margin-top:1em;
     color: #b2b2b2;
     text-align: center;
-    font-size:0.8em;
+    font-size:1em;
+}
+
+input.invalid, select.invalid{
+    border: solid 2px red;
+}
+p.invalid {
+    color: red;
 }
