@@ -1,10 +1,12 @@
 *{
     font-family: "Jetbrains Mono";
     color: #d2d2d2;
-    font-size:1%;
 }
 body {
     background-color: #1a1a1a;
+    width:98%;
+    margin:1%;
+    height:97%;
 }
 nav {
     margin-bottom:1%;
@@ -13,7 +15,7 @@ nav {
 }
 h1 {
     text-align: center;
-    font-size:1%;
+    font-size:2%;
 }
 section, button, select, input{
     background-color: #1f1f1f;
@@ -25,6 +27,7 @@ section {
 }
 input,select{
     padding:0.2em;
+    height:1.5%;
 }
 button {
     padding:0.4em;
