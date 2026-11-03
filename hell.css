@@ -11,3 +11,13 @@ h1{
 footer{
     color:8a8a8a;
 }
+
+nav{
+    border-bottom: solid 2px 1a1a1a;
+}
+
+button {
+    border: none;
+    background: none;
+    font-size:16px;
+}
