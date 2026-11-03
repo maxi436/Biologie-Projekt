@@ -1,15 +1,19 @@
 *{
     font-family: "Jetbrains Mono";
     color: #d2d2d2;
+    font-size:1%;
 }
 body {
     background-color: #1a1a1a;
 }
 nav {
-    margin-bottom: 1em;
+    margin-bottom:1%;
+    padding:0.5%;
+    height:2%
 }
 h1 {
     text-align: center;
+    font-size:1%;
 }
 section, button, select, input{
     background-color: #1f1f1f;
@@ -17,7 +21,7 @@ section, button, select, input{
     border-radius: 10px;
 }
 section {
-    padding:1em;
+    padding:0.5%;
 }
 input,select{
     padding:0.2em;
