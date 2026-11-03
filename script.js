@@ -40,7 +40,7 @@ function bedarf() {
         if (15 <= alt.value && alt.value <= 18) {
             kalorien *= 1.15;
         }
-        if (dia.value===2) {
+        if (dia.value==="2") {
             kalorien -= 400;
         }
 
