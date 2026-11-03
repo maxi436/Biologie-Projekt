@@ -1,5 +1,5 @@
 *{
-    color:1a1a1a;
+    color:#1a1a1a;
     text-align:center;
     font-family:"Courier New";
 }
@@ -8,17 +8,17 @@ h1{
     font-size:32px;
 }
 
-footer{
-    color:8a8a8a;
+footer, footer a{
+    color:#8a8a8a;
 }
 
 nav{
-    border-bottom: solid 2px 1a1a1a;
+    border-bottom: solid 2px #1a1a1a;
 }
 
 button {
     border: white;
     background: white;
     font-size:16px;
-    color: 1a1a1a;
+    color: #1a1a1a;
 }
