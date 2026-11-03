@@ -39,3 +39,44 @@
                 <select id="dia">
                     <option selected hidden value="">auswählen</option>
                     <option value="0">keine</option>
+                    <option value="1">Typ 1</option>
+                    <option value="2">Typ 2</option>
+                </select>
+            </p>
+            <button onclick="show('sport')">Aktivität eintragen</button>
+        </section>
+
+        <section id="bedarf">
+            <h1>Kalorienbedarf</h1>
+            <p id="kalorien"></p>
+            <p id="sportErgebnis"></p>
+        </section>
+
+        <section id="sport">
+            <h1>Aktivität</h1>
+            <p>
+                Gib den aktiven Kalorienverbrauch pro Tag ein:<br>
+                <label for="sportMontag">Montag:</label> <input id="sportMontag" type="number"><br>
+                <label for="sportDienstag">Dienstag:</label> <input id="sportDienstag" type="number"><br>
+                <label for="sportMittwoch">Mittwoch:</label> <input id="sportMittwoch" type="number"><br>
+                <label for="sportDonnerstag">Donnerstag:</label> <input id="sportDonnerstag" type="number"><br>
+                <label for="sportFreitag">Freitag:</label> <input id="sportFreitag" type="number"><br>
+                <label for="sportSamstag">Samstag:</label> <input id="sportSamstag" type="number"><br>
+                <label for="sportSonntag">Sonntag:</label> <input id="sportSonntag" type="number"><br>
+            </p>
+            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf berechnen</button>
+        </section>
+
+        <footer>
+            von Maximilian S. und Max R.<br>
+            Die Berechnung ist vereinfacht und keine medizinische Beratung.<br>
+            <details>
+                <summary>Quellen</summary>
+                dge.de, who.int, uni-hohenheim.de, <a href="https://pubmed.ncbi.nlm.nih.gov">nih</a>
+            </details>
+        </footer>
+
+        <script src="sections.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
