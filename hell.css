@@ -5,7 +5,7 @@
 }
 
 h1{
-    font-size:24px;
+    font-size:32px;
 }
 
 footer{
@@ -20,4 +20,5 @@ button {
     border: white;
     background: white;
     font-size:16px;
+    color: 1a1a1a;
 }
