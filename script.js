@@ -1,66 +1,59 @@
-function bedarf() {
-    const gew = document.getElementById('gew');
-    const gro = document.getElementById('gro');
-    const alt = document.getElementById('alt');
-    const ges = document.getElementById('ges');
-    const dia = document.getElementById('dia');
+const WOCHENTAGE = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
+const MIN_KCAL = 1200;
 
-    const kal = document.getElementById('kalorien');
+function setStatus(el, valid) {
+    el.className = valid ? "valid" : "invalid";
+}
 
-    let c = 0;
+function berechneBedarf() {
+    const gew = document.getElementById("gew");
+    const gro = document.getElementById("gro");
+    const alt = document.getElementById("alt");
+    const ges = document.getElementById("ges");
+    const dia = document.getElementById("dia");
+    const kal = document.getElementById("kalorien");
+    const sport = document.getElementById("sport");
+
+    sport.textContent = "";
+
+    let fehler = false;
     for (const input of [gew, gro, alt]) {
-        if (isNaN(input.value) || input.value <= 0) {
-            kal.textContent = "Ungültige Zahlenwerte!";
-            kal.className = "invalid";
-            input.className = "invalid"
-            c++;
-        } else {
-            input.className = "valid"
-        }
+        const ok = Number.isFinite(parseFloat(input.value)) && parseFloat(input.value) > 0;
+        setStatus(input, ok);
+        if (!ok) fehler = true;
     }
-    if (c > 0) return;
+    if (fehler) {
+        kal.textContent = "Ungültige Zahlenwerte!";
+        setStatus(kal, false);
+        return;
+    }
 
-    if (ges.value === "m" || ges.value === "f") {
-        ges.className = "valid";
-    } else {
+    const geschlechtOk = ges.value === "m" || ges.value === "f";
+    setStatus(ges, geschlechtOk);
+    if (!geschlechtOk) {
         kal.textContent = "Ungültiges Geschlecht!";
-        kal.className = "invalid";
-        ges.className = "invalid";
-        return
+        setStatus(kal, false);
+        return;
     }
 
-    try {
-        let kalorien = gew.value*10+6.25*gro.value-5*alt.value;
+    const gewicht = parseFloat(gew.value);
+    const groesse = parseFloat(gro.value);
+    const alter = parseFloat(alt.value);
 
-        kalorien -= 160;
-        if (ges.value === "m") {
-            kalorien += 400;
-        }
-        if (15 <= alt.value && alt.value <= 18) {
-            kalorien *= 1.15;
-        }
-        if (dia.value==="2") {
-            kalorien -= 400;
-        }
+    let kalorien = 10 * gewicht + 6.25 * groesse - 5 * alter - 160;
+    if (ges.value === "m") kalorien += 400;
+    if (alter >= 15 && alter <= 18) kalorien *= 1.15;
+    if (dia.value === "2" && alter >= 18) kalorien -= 400;
 
-        kalorien = Math.round(kalorien);
+    kalorien = Math.max(MIN_KCAL, Math.round(kalorien));
 
-        kal.textContent = `Täglicher Grundbedarf: ${kalorien} kcal`;
-        kal.className = "valid";
+    kal.textContent = `Täglicher Grundbedarf: ${kalorien} kcal`;
+    setStatus(kal, true);
 
-        const sport = document.getElementById('sport');
-        sport.innerHTML="";
-        const wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
-        let bedarf = [];
-        for (const tag of wochentage) {
-            const input = document.getElementById(`sport${tag}`);
-            const wert = kalorien+parseInt(input.value) ||kalorien;
-            sport.innerHTML += `${tag}: ${wert} kcal<br>`;
-            bedarf.push(wert);
-        }
-
-    } catch (error) {
-        kal.textContent = "Fehler bei der Berechnung.";
-        kal.className = "invalid";
+    for (const tag of WOCHENTAGE) {
+        const extra = parseInt(document.getElementById(`sport${tag}`)?.value, 10) || 0;
+        const zeile = document.createElement("div");
+        zeile.textContent = `${tag}: ${kalorien + extra} kcal`;
+        sport.appendChild(zeile);
     }
 }
