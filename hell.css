@@ -1,11 +1,15 @@
 * {
     color: #1a1a1a;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "JetBrains Mono", "Courier New", Courier, monospace;
     font-weight: bold;
 }
 
 body {
     text-align: center;
+}
+
+[hidden] {
+    display: none !important;
 }
 
 h1 {
@@ -39,4 +43,13 @@ button:hover {
 button:focus-visible {
     outline: 2px solid #1a1a1a;
     outline-offset: 4px;
+}
+
+.valid {
+    color: #1a1a1a;
+}
+
+.invalid {
+    color: #b00020;
+    border-color: #b00020;
 }
