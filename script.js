@@ -50,6 +50,7 @@ function bedarf() {
         kal.className = "valid";
 
         const sport = document.getElementById('sport');
+        sport.innerHTML="";
         const wochentage = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
         let bedarf = [];
         for (const tag of wochentage) {
