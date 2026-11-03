@@ -3,6 +3,7 @@ function bedarf() {
     const gro = document.getElementById('gro');
     const alt = document.getElementById('alt');
     const ges = document.getElementById('ges');
+    const dia = document.getElementById('dia');
 
     const kal = document.getElementById('kalorien');
 
@@ -38,6 +39,9 @@ function bedarf() {
         }
         if (15 <= alt.value && alt.value <= 18) {
             kalorien *= 1.15;
+        }
+        if (dia.value===2) {
+            kalorien -= 400;
         }
 
         kalorien = Math.round(kalorien);
