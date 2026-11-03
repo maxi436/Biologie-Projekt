@@ -1,26 +1,42 @@
-*{
-    color:#1a1a1a;
-    text-align:center;
-    font-family:"Courier New";
-    font-weight:bold;
+* {
+    color: #1a1a1a;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
 }
 
-h1{
-    font-size:48px;
+body {
+    text-align: center;
 }
 
-footer, footer a{
-    color:#8a8a8a;
+h1 {
+    font-size: 48px;
 }
 
-nav{
-    border-bottom: solid 1px #1a1a1a;
+nav {
+    border-bottom: 1px solid #1a1a1a;
+}
+
+footer,
+footer a {
+    color: #6b6b6b;
+}
+
+a {
+    text-decoration: underline;
 }
 
 button {
-    border: white;
+    border: none;
     background: white;
-    font-size:28px;
-    color: #1a1a1a;
-    font-weight:bold;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+button:hover {
+    text-decoration: underline;
+}
+
+button:focus-visible {
+    outline: 2px solid #1a1a1a;
+    outline-offset: 4px;
 }
