@@ -20,7 +20,7 @@ function bedarf() {
     }
     if (c > 0) return;
 
-    if (ges.value === "m" || ges.value === "w") {
+    if (ges.value === "m" || ges.value === "f") {
         ges.className = "valid";
     } else {
         kal.textContent = "Ungültiges Geschlecht!";
