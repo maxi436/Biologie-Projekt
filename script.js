@@ -33,7 +33,7 @@ function bedarf() {
         let kalorien = gew.value*10+6.25*gro.value-5*alt.value;
 
         if (ges.value === "m") {
-            kalorien += 5;
+            kalorien += 161;
         } else if (ges.value === "w") {
             kalorien -= 161;
         }
