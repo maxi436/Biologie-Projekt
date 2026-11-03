@@ -1,8 +1,9 @@
 <!doctype html>
-<html>
+<html lang="de">
     <head>
         <title>Wochenplaner Biologie</title>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,68 +13,29 @@
     </head>
     <body>
         <nav>
-            <button onclick="show('körper')">Eigenschaften</button>
+            <button onclick="show('koerper')">Eigenschaften</button>
             <button onclick="show('sport')">Aktivität</button>
             <button onclick="bedarf(); show('bedarf')">Kalorienbedarf</button>
         </nav>
 
         <section id="start">
             <h1>Hallo Nutzer!</h1>
-            <button onclick="show('körper')">Daten eingeben</button>
+            <button onclick="show('koerper')">Daten eingeben</button>
         </section>
 
-        <section id="körper">
+        <section id="koerper">
             <h1>Eigenschaften</h1>
             <p>
-                Körpergewicht in kg: <input id="gew" type="number"><br>
-                Größe in cm: <input id="gro" type="number"><br>
-                Alter: <input id="alt" type="number"><br>
-                Biologisches Geschlecht:
+                <label for="gew">Körpergewicht in kg:</label> <input id="gew" type="number"><br>
+                <label for="gro">Größe in cm:</label> <input id="gro" type="number"><br>
+                <label for="alt">Alter:</label> <input id="alt" type="number"><br>
+                <label for="ges">Biologisches Geschlecht:</label>
                 <select id="ges">
-                    <option selected hidden>auswählen</option>
+                    <option selected hidden value="">auswählen</option>
                     <option value="m">männlich</option>
                     <option value="f">weiblich</option>
                 </select><br>
-                Diabetes:
+                <label for="dia">Diabetes:</label>
                 <select id="dia">
-                    <option selected hidden>auswählen</option>
+                    <option selected hidden value="">auswählen</option>
                     <option value="0">keine</option>
-                    <option value="1">Typ 1</option>
-                    <option value="2">Typ 2</option>
-                </select>
-            </p>
-            <button onclick="show('sport')">Akrivität eintragen</button>
-        </section>
-
-        <section id="bedarf">
-            <h1>Kalorienbedarf</h1>
-            <p id="kalorien"></p>
-            <p id="sport"></p>
-        </section>
-
-        <section id="sport">
-            <h1>Aktivität</h1>
-            <p>
-                Gebe den aktiven Kalorienverbrauch pro Tag ein:<br>
-                Montag: <input id="sportMontag" type="number"><br>
-                Dienstag: <input id="sportDienstag" type="number"><br>
-                Mittwoch: <input id="sportMittwoch" type="number"><br>
-                Donnerstag: <input id="sportDonnerstag" type="number"><br>
-                Freitag: <input id="sportFreitag" type="number"><br>
-                Samstag: <input id="sportSamstag" type="number"><br>
-                Sonntag: <input id="sportSonntag" type="number"><br>
-            </p>
-            <button onclick="bedarf(); show('bedarf')">Kalorienbedarf berechnen</button>
-        </section>
-
-        <footer>
-            von Maximilian S. und Max R.<br>
-            <details>
-                <summary>Quellen</summary>
-                dge.de, who.int, uni-hohenheim.de, <a href="https://pubmid.ncbi.nlm.nih.gov">nih</a>
-            </details
-        </footer>
-    </body>
-    <script src="sections.js"></script>
-    <script src="script.js"></script>
-</html>
